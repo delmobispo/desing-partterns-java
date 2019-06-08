@@ -40,5 +40,45 @@ Ele permite que diversas ações sejam executadas de forma transparente à class
 # Factory
 Usamos uma fábrica quando temos que isolar o processo de criação de um objeto em um único lugar. Essa fábrica pode descobrir como criar o objeto dentro dela própria, mas geralmente ela não precisa de muitas informações para criar o objeto.
 
-# Flyweight
+Uma Factory instancia uma classe que é importante/complexa, e seu processo de criação deve ser isolado.
 
+# Flyweight
+Um Flyweight serve para quando temos muitas instâncias do mesmo objeto andando pelo sistema, e precisamos economizar. Para tal, o Flyweight faz uso de uma fábrica modificada, que guarda essas instâncias.
+
+A diferença é que o Flyweight garante que existam apenas uma única instância de vários elementos. É um "singleton maior".
+
+# Memento
+O Memento é um padrão de projeto que nos ajuda a salvar e restaurar estados de objetos.
+Um possível problema deste padrão de projeto é a quantidade de memória que ele pode ocupar, afinal estamos guardando muitas instâncias de objetos que podem ser pesados.
+
+# Interpreter
+Quando temos expressões que devem ser avaliadas, e a transformamos em uma estrutura de dados, e depois fazemos com que a própria árvore se avalie, damos o nome de Interpreter.
+
+O padrão é bastante útil quando temos que implementar interpretadores para DSLs, ou coisas similares. É um padrão bem complicado, mas bastante interessante.
+
+# Visitor
+Quando temos uma árvore, e precisamos navegar nessa árvore de maneira organizada, podemos usar um Visitor.
+É comum inclusive que o código faça sempre referência a uma interface de Visitor, e não de uma classe concreta. Assim, conseguimos trocar facilmente o visitor que visitará a árvore
+
+# Bridge
+A ideia da Bridge é justamente ser uma ponte em dois mundos/sistemas. Abstrair a comunicação com um serviço de terceiros.
+
+# Adapter
+Quando temos um conjunto de classes legadas, que achamos que seu uso vai sujar o novo sistema, criamos um "adaptador" que facilita sua utilização. O nome desse padrão de projetos é Adapter.
+A ideia do Adapter é esconder alguma "sujeira", ou adaptar algo que é diferente e não bate com o sistema atual.
+Ele visa adaptar um conjunto de classes que já existem, para uma outra interface, que é a requerida pelo outro sistema.
+
+# Command
+Facilita a criação de comandos. Usamos ele quando temos que separar os comandos que serão executados do objeto que ele pertence. Um bom exemplo disso é o uso de filas de trabalho.
+A ideia do Command é abstrair um comando que deve ser executado, pois não é possível executá-lo naquele momento (pois precisamos por em uma fila ou coisa do tipo).
+
+# Facade
+Uma façade serve como uma frente única para os serviços disponibilizados por um ou mais sub-sistemas, provendo uma maneira mais simples para o seu consumo.
+Como essa classe provê acesso a todos os outros sub-sistemas, é bem comum também que não haja mais de uma instância dessa classe espalhada pelo sistema
+O Façade cria uma interface amigável para que clientes consigam consumir sub-sistemas (ou serviços)..
+É bastante popular, seu uso deve ser feito com cautela. 
+Uma Façade tende a ser muito acoplada, e ter uma interface gorda. Façades menores podem até ser úteis, mas também devem ser usadas com parcimônia.
+
+# Singleton
+Ele faz com que só exista uma única instância da classe em todo o sistema!
+É bastante popular, seu uso deve ser feito com cautela. Quando mal utilizado, acaba por permitir ao usuário a utilização de variáveis globais (que é uma coisa que a programação procedural já mostrou que é problemático).
